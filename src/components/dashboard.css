@@ -65,7 +65,7 @@
   flex-direction: column;
   padding: 2rem;
   background-color: #f0f9ff; /* light blue */
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .tabs-container {
@@ -122,6 +122,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
 }
 
 .placeholder-title {
@@ -205,6 +206,6 @@ html, body, #root {
 }
 
 .placeholder-text li:hover {
-  color: #0ea5e9; /* Tailwind sky-500 */
+  color: #0ea0e9; /* Tailwind sky-500 */
   transform: translateX(2px);
 }
