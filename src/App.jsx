@@ -3,12 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ResultsPage from './components/resultspage'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Login from './components/Login';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import KPIDashboard from './components/KPIDashboard';
 import { FileProvider, useFiles } from './context/FileContext';
 import axios from 'axios';
+
 
 
 
@@ -26,7 +27,9 @@ function App() {
     <FileProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Navigate to = "/login" replace/>} />
+          <Route path="/login" element={<Login/>} />
+
           <Route path="/dashboard" element={
             <ProtectedRoute>
               <ResultsPage />

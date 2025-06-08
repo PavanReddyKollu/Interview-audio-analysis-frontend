@@ -34,13 +34,22 @@ export default function Login() {
   };
 
   return (
-    <Box
-      sx={{ width: 400, mx: 'auto', mt: 8 }}
-    >
-      <Paper sx={{ p: 4 }}>
-        <Typography variant="h5" gutterBottom>
+  <Box
+    sx={{
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#f5f5f5', // ensure consistent background
+    }}
+  >
+    <Box sx={{ width: 400 }}>
+      <Paper elevation={3} sx={{ p: 4 }}>
+        <Typography variant="h5" gutterBottom textAlign="center">
           {step === 'username' ? 'Enter Username' : (step === 'signin' ? 'Sign In' : 'Sign Up')}
         </Typography>
+
         {step === 'username' && (
           <>
             <TextField
@@ -50,6 +59,7 @@ export default function Login() {
             <Button fullWidth variant="contained" onClick={handleUsername}>Next</Button>
           </>
         )}
+
         {step === 'signin' && (
           <>
             <TextField
@@ -59,6 +69,7 @@ export default function Login() {
             <Button fullWidth variant="contained" onClick={handleSignin}>Sign In</Button>
           </>
         )}
+
         {step === 'signup' && (
           <>
             <TextField
@@ -74,5 +85,7 @@ export default function Login() {
         )}
       </Paper>
     </Box>
-  );
+  </Box>
+);
+
 }

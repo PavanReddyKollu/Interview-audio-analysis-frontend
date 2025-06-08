@@ -111,7 +111,7 @@ export default function Dashboard() {
         overflow: 'hidden',
       }}
     >
-      <aside className="sidebar" style={{width : '275px'}}>
+      <aside className="sidebar" style={{width : '300px'}}>
         <div className="sidebar-header">Select a file</div>
         <input
           type="text"

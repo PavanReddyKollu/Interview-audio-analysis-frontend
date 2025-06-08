@@ -235,6 +235,7 @@ const KPIDashboard = () => {
           </ResponsiveContainer>
         </div>
         {/* Pie Chart: Rating Distribution */}
+                {/* Pie Chart: Rating Distribution */}
         <div className="chart-card">
           <h4>Rating Distribution</h4>
           <ResponsiveContainer width="100%" height={250}>
@@ -242,17 +243,17 @@ const KPIDashboard = () => {
               <Pie
                 data={(() => {
                   const buckets = [
-                    { name: '0-2', value: 0 },
-                    { name: '3-5', value: 0 },
-                    { name: '6-8', value: 0 },
+                    { name: '6', value: 0 },
+                    { name: '7', value: 0 },
+                    { name: '8', value: 0 },
                     { name: '9-10', value: 0 },
                   ];
                   files.forEach(f => {
                     const rating = Array.isArray(f.result_data) && f.result_data[0] ? f.result_data[0].rating || 0 : 0;
-                    if (rating <= 2) buckets[0].value++;
-                    else if (rating <= 5) buckets[1].value++;
-                    else if (rating <= 8) buckets[2].value++;
-                    else buckets[3].value++;
+                    if (rating === 6) buckets[0].value++;
+                    else if (rating === 7) buckets[1].value++;
+                    else if (rating === 8) buckets[2].value++;
+                    else if (rating >= 9 && rating <= 10) buckets[3].value++;
                   });
                   return buckets;
                 })()}
